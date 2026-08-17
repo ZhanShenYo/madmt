@@ -1,0 +1,8 @@
+{
+    "source": "",
+    "reference": "",
+    "base_translation": "",
+    "src_lng": "",
+    "tgt_lng": "",
+    "base_prompt": "Translate the following text from ##src_lng## to ##tgt_lng##: ##source##.\n##context##Please return only the ##tgt_lng## translation. Do not include JSON, metadata, explanations, or any additional content."
+}

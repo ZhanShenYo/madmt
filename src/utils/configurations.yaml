@@ -1,0 +1,57 @@
+# Hyperparameters only. All prompts live in prompts/*.json.
+# providers. Any name src/utils/agent.py can route is accepted
+# (OpenAI, Anthropic, DeepSeek, Gemini, Azure).
+default_model: &model gpt-4.1-2025-04-14
+
+base_model: *model
+
+#####################     generation     ######################
+# Shared decoding and retry settings for every agent.
+generation:
+  temperature: 0
+  max_tokens: 6000       # max tokens per response
+  top_p: 1.0
+  max_retries: 20        # retries on rate limits / transient API errors
+  sleep_time:            # seconds to wait before each call, per method
+    debate: 3
+    reflection: 1
+    som: 1
+    decouple: 1.4
+    zero: 1.4
+
+#####################     debate     ######################
+debate_model_name: *model
+debate_base_model: *model
+
+NAME_DICT:
+  Affirmative side: *model
+  Negative side: *model
+  Moderator: *model
+
+#####################     som     ######################
+som_base_model: *model
+som_moderator_model: *model
+# Add or remove agents here to change the size of the society.
+Society:
+  Agent1: *model
+  Agent2: *model
+
+#####################     decouple     ######################
+decouple_base_model: *model
+decouple_moderator_model: *model
+accuracy: *model
+fluency: *model
+term: *model
+style: *model
+
+#####################     reflection     ######################
+reflction_model_name: *model
+reflction_base_model: *model
+
+#####################     zero     ######################
+model_name: *model
+
+#####################     json repair     ######################
+# Small model used as the last resort when an agent returns malformed JSON.
+# Set to an empty value to disable the repair call entirely.
+repair_model: gpt-4o-mini-2024-07-18

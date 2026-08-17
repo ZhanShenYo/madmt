@@ -1,0 +1,30 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Experiment artifacts
+results/
+outputs/
+checkpoints/
+data/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+env/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

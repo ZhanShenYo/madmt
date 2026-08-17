@@ -1,0 +1,10 @@
+{
+    "source": "",
+    "reference": "",
+    "base_translation": "",
+    "src_lng": "",
+    "tgt_lng": "",
+    "base_prompt": "Translate the following text from ##src_lng## to ##tgt_lng##: ##source##.\n##context##Please return only the ##tgt_lng## translation. Do not include JSON, metadata, explanations, or any other content.",
+    "eval_prompt": "Label the translation quality as \"Good\", \"Medium\", or \"Bad\".\n\nNow please output your answer in JSON format, strictly following this structure:\n\n{\"label\": \"Good\"}\n\nOnly return the JSON object. Do not include any other content.",
+    "reflection_prompt": "You are refining your previous ##tgt_lng## translation to make it more accurate, fluent, and natural.\n\nOriginal sentence: ##source##\n\nPrevious translation (labeled as ##label##):\n##pre_tran##\n##context##\nReturn your improved version. If no better version exists, return the same one.\nOnly return the final ##tgt_lng## translation. No explanations, no metadata."
+}
